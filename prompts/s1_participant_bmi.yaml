@@ -1,0 +1,27 @@
+metadata:
+  name: "s1_participant_bmi"
+  version: "1.0.0"
+  description: "Extracts structured entities from raw text"
+
+prompt_config:
+  role: >
+    You are an information extraction agent. Your goal is to identify and 
+    extract specific data points from the provided text with high precision.
+  
+  context: |
+    You will be given a block of unstructured text.
+    Do not include any conversational filler or prose.
+    Output only the requested information.
+  
+  extraction_fields:
+    Extract the BMI (body mass index) of participants included or to be included in the trial.
+    Output only participant BMI number and BMI unit and not entire sentence (kg per square meter).
+
+  constraints:
+    - "If a field is missing, return null."
+    - "Do not hallucinate facts."
+    - "Maintain the original casing of proper nouns."
+
+input_template: |
+  TEXT TO ANALYZE:
+  {{input_text}}
