@@ -1,0 +1,11 @@
+services:
+  factsheet-gen:
+    build: .
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+    restart: always
