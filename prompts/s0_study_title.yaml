@@ -9,7 +9,7 @@ prompt_config:
     extract specific data points from the provided text with high precision.
   
   context: |
-    You will be given a block of unstructured text.
+    You will be given a block of unstructured text from which you must extract the required information.
     Do not include any conversational filler or prose.
     Output only the requested information.
   
